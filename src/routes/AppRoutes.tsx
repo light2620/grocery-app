@@ -19,6 +19,7 @@ import Explore from "../pages/app/Explore";
 import CategoryProducts from "../pages/app/CategoryProducts";
 import Favourite from "../pages/app/Favourite";
 import Filter from "../pages/app/Filter";
+import Screens from "../pages/app/Screen";
 
 
 const AppRoutes = () => {
@@ -99,6 +100,13 @@ element={<Onboarding />}
 path="/category/:category"
 
 element={<CategoryProducts />}
+
+/>
+<Route
+
+  path="/screens"
+
+  element={<Screens />}
 
 />
 

@@ -1,34 +1,31 @@
 interface SocialButtonProps {
-  icon: string;
-  text: string;
-  className?: string;
+  icon: string
+  text: string
+  className?: string
 }
-
 
 const SocialButton = ({
   icon,
   text,
-  className = "",
+  className = '',
 }: SocialButtonProps) => {
   return (
     <button
       className={`
-        min-h-[67px]
+        grid min-h-[67px]
         w-full
-
-        rounded-[19px]
-
-        grid
         grid-cols-[55px_1fr_55px]
         items-center
+
+        rounded-[19px]
 
         px-3
         py-3
 
-        text-white
         text-[18px]
-        leading-[22px]
         font-semibold
+        leading-[22px]
+        text-white
 
         transition
         active:scale-[0.98]
@@ -36,42 +33,21 @@ const SocialButton = ({
         ${className}
       `}
     >
-
-      <div
-        className="
-          flex
-          items-center
-          justify-center
-        "
-      >
+      <div className="flex items-center justify-center">
         <img
           src={icon}
           alt=""
-          className="
-            w-[22px]
-            h-[22px]
-            object-contain
-          "
+          className="h-[22px] w-[22px] object-contain"
         />
       </div>
 
-
-      <span
-        className="
-          text-center
-          break-words
-        "
-      >
+      <span className="break-words text-center">
         {text}
       </span>
 
-
       <div />
-
-
     </button>
-  );
-};
+  )
+}
 
-
-export default SocialButton;
+export default SocialButton

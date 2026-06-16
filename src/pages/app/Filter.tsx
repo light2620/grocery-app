@@ -1,372 +1,106 @@
-import { X } from "lucide-react";
+import { X } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
-import { useNavigate } from "react-router-dom";
+import FilterCheckbox from '../../components/filter/filterCheckbox'
 
+import { useFilterStore } from '../../stores/filterStore'
 
-import FilterCheckbox from "../../components/filter/filterCheckbox";
+import categoriesData from '../../data/categories.json'
 
-
-import {
-  useFilterStore
-} from "../../stores/filterStore";
-
-
-import categoriesData from "../../data/categories.json";
-
-
-import type { Category } from "../../types/category";
-
-
-
+import type { Category } from '../../types/category'
 
 const brandOptions = [
-
-  "Individual Collection",
-
-  "Cocola",
-
-  "Ifad",
-
-  "Kazi Farmas",
-
-];
-
-
-
-
+  'Individual Collection',
+  'Cocola',
+  'Ifad',
+  'Kazi Farmas',
+]
 
 const Filter = () => {
+  const navigate = useNavigate()
 
-
-  const navigate = useNavigate();
-
-
-
-  const categoryOptions =
-    categoriesData as Category[];
-
-
-
-
+  const categoryOptions = categoriesData as Category[]
 
   const {
-
     categories,
-
     brands,
-
     toggleCategory,
-
     toggleBrand,
-
-  } = useFilterStore();
-
-
-
-
+  } = useFilterStore()
 
   return (
-
-    <main
-      className="
-        min-h-screen
-
-        bg-white
-      "
-    >
-
-
-
-      {/* header */}
-
-
-      <header
-        className="
-          h-[90px]
-
-          px-[25px]
-
-          flex
-          items-center
-          justify-between
-        "
-      >
-
-
-
-        <button
-          onClick={() =>
-            navigate(-1)
-          }
-        >
-
+    <main className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="flex h-[90px] items-center justify-between px-[25px]">
+        <button onClick={() => navigate(-1)}>
           <X />
-
         </button>
 
-
-
-
-
-        <h1
-          className="
-            text-[20px]
-
-            font-semibold
-          "
-        >
-
+        <h1 className="text-[20px] font-semibold">
           Filters
-
         </h1>
 
-
-
-
         <div className="w-6" />
-
-
-
       </header>
 
-
-
-
-
-
-
-
-
-      <section
-        className="
-          min-h-[calc(100vh-90px)]
-
-          bg-[#F2F3F2]
-
-          rounded-t-[30px]
-
-          px-[25px]
-
-          pt-[30px]
-
-          relative
-        "
-      >
-
-
-
-
-
-        {/* categories */}
-
-
-        <h2
-          className="
-            text-[22px]
-
-            font-semibold
-
-            mb-[25px]
-          "
-        >
-
+      <section className="relative min-h-[calc(100vh-90px)] rounded-t-[30px] bg-[#F2F3F2] px-[25px] pt-[30px]">
+        {/* Categories */}
+        <h2 className="mb-[25px] text-[22px] font-semibold">
           Categories
-
         </h2>
 
-
-
-
-
-        <div
-          className="
-            flex
-            flex-col
-            gap-[20px]
-          "
-        >
-
-
-          {
-
-            categoryOptions.map(
-              category => (
-
-                <FilterCheckbox
-
-                  key={category.id}
-
-                  label={category.name}
-
-
-                  checked={
-                    categories.includes(
-                      category.slug
-                    )
-                  }
-
-
-                  onClick={() =>
-
-                    toggleCategory(
-                      category.slug
-                    )
-
-                  }
-
-                />
-
-              )
-            )
-
-          }
-
-
+        <div className="flex flex-col gap-[20px]">
+          {categoryOptions.map(category => (
+            <FilterCheckbox
+              key={category.id}
+              label={category.name}
+              checked={categories.includes(category.slug)}
+              onClick={() => toggleCategory(category.slug)}
+            />
+          ))}
         </div>
 
-
-
-
-
-
-
-
-
-        {/* brands */}
-
-
-        <h2
-          className="
-            mt-[35px]
-
-            text-[22px]
-
-            font-semibold
-
-            mb-[25px]
-          "
-        >
-
+        {/* Brands */}
+        <h2 className="mb-[25px] mt-[35px] text-[22px] font-semibold">
           Brand
-
         </h2>
 
-
-
-
-
-
-        <div
-          className="
-            flex
-            flex-col
-            gap-[20px]
-          "
-        >
-
-
-          {
-
-            brandOptions.map(
-              brand => (
-
-                <FilterCheckbox
-
-                  key={brand}
-
-                  label={brand}
-
-
-                  checked={
-                    brands.includes(
-                      brand
-                    )
-                  }
-
-
-                  onClick={() =>
-
-                    toggleBrand(
-                      brand
-                    )
-
-                  }
-
-                />
-
-              )
-            )
-
-          }
-
-
+        <div className="flex flex-col gap-[20px]">
+          {brandOptions.map(brand => (
+            <FilterCheckbox
+              key={brand}
+              label={brand}
+              checked={brands.includes(brand)}
+              onClick={() => toggleBrand(brand)}
+            />
+          ))}
         </div>
 
-
-
-
-
-
-
-
-
-        {/* button */}
-
-
+        {/* Apply Button */}
         <button
-
-          onClick={() =>
-            navigate(-1)
-          }
-
-
+          onClick={() => navigate(-1)}
           className="
-            fixed
-
-            left-[25px]
-            right-[25px]
-
-            bottom-[35px]
-
-
-            md:left-1/2
-            md:-translate-x-1/2
-            md:w-[430px]
-
+            fixed bottom-[35px] left-[25px] right-[25px]
 
             h-[67px]
 
-
             rounded-[19px]
-
-
             bg-[#53B175]
 
-
+            text-[18px]
+            font-semibold
             text-white
 
-            text-[18px]
-
-            font-semibold
+            md:left-1/2
+            md:w-[430px]
+            md:-translate-x-1/2
           "
         >
-
           Apply Filter
-
         </button>
-
-
-
-
-
       </section>
-
-
     </main>
+  )
+}
 
-  );
-
-};
-
-
-export default Filter;
+export default Filter
