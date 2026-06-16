@@ -5,6 +5,8 @@ import {
   useParams,
 } from "react-router-dom";
 
+import { useCartStore } from "../../stores/cartStore";
+
 import {
   ArrowLeft,
   ChevronDown,
@@ -30,6 +32,9 @@ const ProductDetail = () => {
 
   const [qty, setQty] = useState(1);
 
+  const addToCart = useCartStore(
+    state => state.addToCart
+  );
 
 
   const product = useProductStore((state) =>
@@ -38,6 +43,17 @@ const ProductDetail = () => {
     )
   );
 
+  const handleAddCart = () => {
+    if (!product) {
+      return;
+    }
+
+    addToCart(
+      product,
+      qty
+    );
+
+  };
 
 
   if (!product) {
@@ -564,29 +580,31 @@ const increaseQty = () => {
 
 
           <button
-            className="
-              mt-[20px]
+  onClick={handleAddCart}
 
-              w-full
-              h-[67px]
+  className="
+    mt-[20px]
 
-              rounded-[19px]
+    w-full
+    h-[67px]
 
-              bg-[#53B175]
+    rounded-[19px]
 
-              text-white
+    bg-[#53B175]
 
-              text-[18px]
-              font-semibold
+    text-white
 
-              transition
-              active:scale-95
-            "
-          >
+    text-[18px]
+    font-semibold
 
-            Add To Basket
+    transition
+    active:scale-95
+  "
+>
 
-          </button>
+  Add To Basket
+
+</button>
 
 
 
