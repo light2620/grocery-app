@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   Search,
@@ -23,6 +24,8 @@ import { useDebounce } from "../../hooks/useDebounce";
 
 
 const Explore = () => {
+
+    const navigate = useNavigate();
 
 
   const [searchValue, setSearchValue] =
@@ -274,11 +277,15 @@ const Explore = () => {
 
           {showSearch && (
 
-            <button>
+           <button
+onClick={()=>
+navigate("/filter")
+}
+>
 
-              <SlidersHorizontal />
+<SlidersHorizontal/>
 
-            </button>
+</button>
 
           )}
 

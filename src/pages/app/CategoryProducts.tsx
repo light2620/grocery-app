@@ -1,3 +1,8 @@
+import { useEffect
+
+
+ } from "react";
+
 import {
   ArrowLeft,
   SlidersHorizontal,
@@ -14,7 +19,7 @@ import ProductCard from "../../components/product/ProductCard";
 
 
 import { useProductStore } from "../../stores/productStore";
-
+import { useFilterStore } from "../../stores/filterStore";
 
 import categories from "../../data/categories.json";
 
@@ -48,12 +53,55 @@ const CategoryProducts = () => {
 
 
 
-  const filteredProducts =
-    products.filter(
-      item =>
-        item.category === category
-    );
+const selectedCategories =
+useFilterStore(
+ state=>state.categories
+);
 
+
+
+const filteredProducts =
+products.filter(product=>{
+
+
+ if(
+  selectedCategories.length === 0
+ ){
+
+  return true;
+
+ }
+
+
+ return selectedCategories.includes(
+  product.category
+ );
+
+
+});
+
+
+    const setCategories =
+useFilterStore(
+ state=>state.setCategories
+);
+
+useEffect(()=>{
+
+
+ if(category){
+
+  setCategories([
+    category
+  ]);
+
+ }
+
+
+},[
+ category,
+ setCategories
+]);
 
 
 
@@ -128,11 +176,15 @@ const CategoryProducts = () => {
 
 
 
-          <button>
+          <button
+onClick={()=>
+navigate("/filter")
+}
+>
 
-            <SlidersHorizontal />
+<SlidersHorizontal/>
 
-          </button>
+</button>
 
 
 
