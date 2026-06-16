@@ -1,0 +1,15 @@
+[
+ {
+  "id":1,
+  "name":"Pulses",
+  "image":"/categories/pulses.png",
+  "color":"bg-[#F8A44C]/20"
+ },
+
+ {
+  "id":2,
+  "name":"Rice",
+  "image":"/categories/rice.png",
+  "color":"bg-[#53B175]/20"
+ }
+]
