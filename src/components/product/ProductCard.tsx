@@ -1,0 +1,101 @@
+import { Plus } from "lucide-react";
+
+import type { Product } from "../../types/product";
+
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard = ({ product }: ProductCardProps) => {
+  return (
+    <div
+      className="
+
+min-w-[173px]
+
+rounded-[18px]
+
+border
+border-[#E2E2E2]
+
+p-[15px]
+
+"
+    >
+      <img
+        src={product.image}
+        alt={product.name}
+        className="
+h-[90px]
+mx-auto
+object-contain
+"
+      />
+
+      <h3
+        className="
+mt-[20px]
+
+text-[16px]
+font-semibold
+
+text-[#181725]
+
+"
+      >
+        {product.name}
+      </h3>
+
+      <p
+        className="
+mt-[5px]
+
+text-[14px]
+
+text-[#7C7C7C]
+"
+      >
+        {product.quantity}
+      </p>
+
+      <div
+        className="
+mt-[20px]
+
+flex
+items-center
+justify-between
+"
+      >
+        <strong
+          className="
+text-[18px]
+"
+        >
+          ${product.price}
+        </strong>
+
+        <button
+          className="
+w-[45px]
+h-[45px]
+
+rounded-[17px]
+
+bg-[#53B175]
+
+flex
+items-center
+justify-center
+
+text-white
+"
+        >
+          <Plus />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
