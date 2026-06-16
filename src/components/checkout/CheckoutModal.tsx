@@ -1,8 +1,13 @@
+import { useState } from "react";
+
 import {
   ChevronRight,
   X,
 } from "lucide-react";
 
+import OrderResultModal from "../order/OrderResultModal";
+
+import type { OrderStatus } from "../../types/order";
 
 import { useCartStore } from "../../stores/cartStore";
 
@@ -16,16 +21,54 @@ interface CheckoutModalProps {
 
 
 
+
 const CheckoutModal = ({
   close,
 
 }: CheckoutModalProps) => {
+
+    const [loading,setLoading] =
+useState(false);
+
+
+const [orderStatus,setOrderStatus] =
+useState<OrderStatus | null>(null);
 
 
   const total =
     useCartStore(
       state => state.totalPrice
     );
+
+    const placeOrder = () => {
+
+
+  setLoading(true);
+
+
+
+  setTimeout(()=>{
+
+
+    const isSuccess =
+      Math.random() > 0.5;
+
+
+
+    setOrderStatus(
+      isSuccess ? "success" : "failed"
+    );
+
+
+
+    setLoading(false);
+
+
+
+  },1500);
+
+
+};
 
 
 
@@ -216,42 +259,70 @@ const CheckoutModal = ({
 
 
         <button
-          className="
-            mt-[35px]
 
-            w-full
-            h-[67px]
+onClick={placeOrder}
 
-            rounded-[19px]
+disabled={loading}
 
-            bg-[#53B175]
 
-            text-white
+className="
+mt-[35px]
 
-            text-[18px]
+w-full
+h-[67px]
 
-            font-semibold
+rounded-[19px]
 
-            active:scale-95
+bg-[#53B175]
 
-            transition
-          "
-        >
+text-white
 
-          Place Order
+text-[18px]
 
-        </button>
+font-semibold
+
+disabled:opacity-60
+"
+
+>
+
+{
+loading
+?
+"Processing..."
+:
+"Place Order"
+}
+
+</button>
 
 
 
 
       </section>
+      {
+orderStatus && (
+
+<OrderResultModal
+
+status={orderStatus}
+
+close={() =>
+ setOrderStatus(null)
+}
+
+/>
+
+)
+}
 
 
 
     </div>
+    
 
   );
+  
 
 };
 
