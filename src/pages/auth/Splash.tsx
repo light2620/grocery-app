@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-import carrot from "../../assets/images/carrot.svg";
-import nectar from "../../assets/images/nectar.svg";
+import carrot from "../../assets/images/carrot.png";
+import nectar from "../../assets/images/nector.png";
 
 
 
