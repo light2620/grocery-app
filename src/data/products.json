@@ -1,0 +1,34 @@
+[
+  {
+    "id":1,
+    "name":"Organic Bananas",
+    "image":"/products/banana.png",
+    "quantity":"7pcs, Priceg",
+    "price":4.99,
+    "category":"fruits"
+  },
+  {
+    "id":2,
+    "name":"Red Apple",
+    "image":"/products/apple.png",
+    "quantity":"1kg, Priceg",
+    "price":4.99,
+    "category":"fruits"
+  },
+  {
+    "id":3,
+    "name":"Bell Pepper Red",
+    "image":"/products/pepper.png",
+    "quantity":"1kg, Priceg",
+    "price":4.99,
+    "category":"vegetables"
+  },
+  {
+    "id":4,
+    "name":"Broiler Chicken",
+    "image":"/products/chicken.png",
+    "quantity":"1kg, Priceg",
+    "price":4.99,
+    "category":"meat"
+  }
+]

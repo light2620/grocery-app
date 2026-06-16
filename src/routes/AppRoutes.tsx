@@ -10,6 +10,7 @@ import SignIn from "../pages/auth/SignIn";
 import OtpVerification from "../pages/auth/OtpVerification";
 import Location from "../pages/auth/Location";
 import Login from "../pages/auth/Login";
+import Signup from "../pages/auth/Signup";  
 
 
 const AppRoutes = () => {
@@ -47,6 +48,11 @@ element={<Onboarding />}
 <Route
   path="/login"
   element={<Login />}
+/>
+
+<Route
+  path="/signup"
+  element={<Signup />}
 />
 
 </Routes>
