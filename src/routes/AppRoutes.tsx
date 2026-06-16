@@ -6,6 +6,7 @@ import {
 
 import Splash from "../pages/auth/Splash";
 import Onboarding from "../pages/auth/Onboarding";
+import SignIn from "../pages/auth/SignIn";
 
 
 const AppRoutes = () => {
@@ -23,6 +24,11 @@ element={<Splash />}
 <Route
 path="/onboarding"
 element={<Onboarding />}
+/>
+
+<Route
+ path="/signin"
+ element={<SignIn />}
 />
 
 
