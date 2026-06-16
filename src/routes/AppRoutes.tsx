@@ -19,6 +19,7 @@ import Explore from "../pages/app/Explore";
 import CategoryProducts from "../pages/app/CategoryProducts";
 
 
+
 const AppRoutes = () => {
 
 return (
@@ -99,6 +100,7 @@ path="/category/:category"
 element={<CategoryProducts />}
 
 />
+
 
 
 </Route>

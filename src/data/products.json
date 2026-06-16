@@ -83,7 +83,34 @@
 
     "isBestSelling":false,
     "stock" : 5
-  }
+  },
+  {
+  "id": 30,
+
+  "name": "Egg Chicken Red",
+
+  "images": [
+    "/products/egg-red.png"
+  ],
+
+  "quantity": "4pcs, Price",
+
+  "price": 1.99,
+
+  "stock": 15,
+
+  "description": "Fresh chicken eggs",
+
+  "nutrition": "100gr",
+
+  "rating": 5,
+
+  "category": "grocery",
+
+  "isExclusive": false,
+
+  "isBestSelling": false
+}
 
 
 ]
