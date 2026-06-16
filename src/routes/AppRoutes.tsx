@@ -12,6 +12,7 @@ import Location from "../pages/auth/Location";
 import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
 import Home from "../pages/app/Home";  
+import ProductDetail from "../pages/app/ProductDetail";
 
 
 const AppRoutes = () => {
@@ -60,6 +61,14 @@ element={<Onboarding />}
         path="/home"
         element={<Home />}
       />
+
+      <Route
+
+path="/product/:id"
+
+element={<ProductDetail/>}
+
+/>
 
 </Routes>
 

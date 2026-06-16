@@ -1,72 +1,31 @@
 [
   {
-    "id":1,
-    "name":"Organic Bananas",
-    "image":"/products/banana.png",
-    "quantity":"7pcs, Priceg",
-    "price":4.99,
+    "id": 1,
+    "name": "Naturel Red Apple",
+
+    "images": [
+      "/products/apple1.png",
+      "/products/apple2.png",
+      "/products/apple3.png"
+    ],
+
+    "quantity": "1kg, Price",
+
+    "price": 4.99,
+
+    "description":
+      "Apples are nutritious. Apples may be good for weight loss. Apples may be good for your heart.",
+
+    "nutrition":"100gr",
+
+    "rating":5,
+
     "category":"fruits",
+
     "isExclusive":true,
-    "isBestSelling":false
-  },
 
+    "isBestSelling":false,
 
-  {
-    "id":2,
-    "name":"Red Apple",
-    "image":"/products/apple.png",
-    "quantity":"1kg, Priceg",
-    "price":4.99,
-    "category":"fruits",
-    "isExclusive":true,
-    "isBestSelling":false
-  },
-
-
-  {
-    "id":3,
-    "name":"Bell Pepper Red",
-    "image":"/products/pepper.png",
-    "quantity":"1kg, Priceg",
-    "price":4.99,
-    "category":"vegetables",
-    "isExclusive":false,
-    "isBestSelling":true
-  },
-
-
-  {
-    "id":4,
-    "name":"Ginger",
-    "image":"/products/ginger.png",
-    "quantity":"250gm, Priceg",
-    "price":4.99,
-    "category":"vegetables",
-    "isExclusive":false,
-    "isBestSelling":true
-  },
-
-
-  {
-    "id":5,
-    "name":"Beef Bone",
-    "image":"/products/beef.png",
-    "quantity":"1kg, Priceg",
-    "price":4.99,
-    "category":"meat",
-    "isExclusive":false,
-    "isBestSelling":false
-  },
-
-
-  {
-    "id":6,
-    "name":"Broiler Chicken",
-    "image":"/products/chicken.png",
-    "quantity":"1kg, Priceg",
-    "price":4.99,
-    "category":"meat",
-    "isExclusive":false,
-    "isBestSelling":false
+    "stock": 5
   }
 ]

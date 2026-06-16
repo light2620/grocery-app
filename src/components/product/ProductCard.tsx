@@ -1,4 +1,5 @@
 import { Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import type { Product } from "../../types/product";
 
@@ -7,6 +8,8 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="
@@ -21,9 +24,10 @@ border-[#E2E2E2]
 p-[15px]
 
 "
+      onClick={() => navigate(`/product/${product.id}`)}
     >
       <img
-        src={product.image}
+        src={product.images[0]}
         alt={product.name}
         className="
 h-[90px]

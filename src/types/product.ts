@@ -11,14 +11,21 @@ export interface Product {
 
   name:string;
 
-  image:string;
+  images:string[];
+
+  stock: number;
 
   price:number;
 
   quantity:string;
 
-  category:ProductCategory;
+  description:string;
 
+  nutrition:string;
+
+  rating:number;
+
+  category:ProductCategory;
 
   isExclusive:boolean;
 
