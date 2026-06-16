@@ -14,6 +14,7 @@ import Signup from "../pages/auth/Signup";
 import Home from "../pages/app/Home";  
 import ProductDetail from "../pages/app/ProductDetail";
 import Cart from "../pages/app/Cart";
+import AppLayout from "../components/layout/AppLayout";
 
 
 const AppRoutes = () => {
@@ -58,22 +59,48 @@ element={<Onboarding />}
   element={<Signup />}
 />
 
- <Route
-        path="/home"
-        element={<Home />}
-      />
 
-      <Route
+<Route element={<AppLayout />}>
+
+  <Route
+    path="/home"
+    element={<Home />}
+  />
+
+
+  <Route
+    path="/cart"
+    element={<Cart />}
+  />
+
+
+  <Route
+    path="/explore"
+    element={<div>Explore</div>}
+  />
+
+
+  <Route
+    path="/favourite"
+    element={<div>Favourite</div>}
+  />
+
+
+  <Route
+    path="/account"
+    element={<div>Account</div>}
+  />
+
+
+</Route>
+ 
+
+ <Route
 
 path="/product/:id"
 
 element={<ProductDetail/>}
 
-/>
-
-<Route
-  path="/cart"
-  element={<Cart />}
 />
 
 </Routes>
