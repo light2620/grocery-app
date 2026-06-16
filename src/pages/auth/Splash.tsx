@@ -1,70 +1,142 @@
-import carrot from "../../assets/images/carrot.png";
-import nectar from "../../assets/images/nector.png";
+
+
+import { useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
+
+
+import carrot from "../../assets/images/carrot.svg";
+import nectar from "../../assets/images/nectar.svg";
+
 
 
 const Splash = () => {
+
+
+  const navigate = useNavigate();
+
+
+
+  useEffect(() => {
+
+
+    const timer = setTimeout(() => {
+
+
+      navigate("/home", {
+        replace: true,
+      });
+
+
+    }, 3000);
+
+
+
+
+    return () =>
+      clearTimeout(timer);
+
+
+
+  }, [navigate]);
+
+
+
+
+
   return (
+
     <main
       className="
         min-h-screen
+
         bg-[#53B175]
+
         flex
         items-center
         justify-center
       "
     >
-      <section
+
+
+
+      <div
         className="
           flex
           items-center
-          gap-[12px]
+          gap-3
         "
       >
 
-        {/* carrot */}
+
+
         <img
+
           src={carrot}
-          alt=""
+
+          alt="Nectar Logo"
+
           className="
-            w-[54px]
-            h-[63px]
+            w-[55px]
           "
+
         />
 
 
-        {/* text group */}
+
+
         <div>
 
+
           <img
+
             src={nectar}
-            alt="nectar"
+
+            alt="Nectar"
+
             className="
-              w-[200px]
-              h-auto
+              w-[180px]
             "
+
           />
+
 
 
           <p
             className="
+              mt-1
+
               text-white
+
               text-[14px]
               leading-[18px]
+
               tracking-[5.5px]
-              font-medium
+
               text-center
-              mt-[2px]
             "
           >
+
             online groceriet
+
           </p>
+
+
 
         </div>
 
-      </section>
+
+
+      </div>
+
+
+
     </main>
+
   );
+
 };
+
 
 
 export default Splash;
