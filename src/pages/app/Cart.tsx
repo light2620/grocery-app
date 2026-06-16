@@ -1,28 +1,32 @@
+import { useState } from "react";
 import CartItemCard from "../../components/cart/CartItemCard";
 
 
 import {
-  useCartStore
+    useCartStore
 } from "../../stores/cartStore";
 
 
+import CheckoutModal from "../../components/checkout/CheckoutModal";
 const Cart = () => {
 
 
-  const {
-    items,
-    increaseQuantity,
-    decreaseQuantity,
-    removeItem,
-    totalPrice,
-  } = useCartStore();
+    const {
+        items,
+        increaseQuantity,
+        decreaseQuantity,
+        removeItem,
+        totalPrice,
+    } = useCartStore();
+
+    const [checkoutOpen, setCheckoutOpen] = useState(false);
 
 
+    return (
+        
 
-  return (
-
-    <main
-      className="
+        <main
+            className="
         min-h-screen
 
         bg-white
@@ -32,24 +36,24 @@ const Cart = () => {
         md:flex
         md:justify-center
       "
-    >
+        >
 
 
 
-      <section
-        className="
+            <section
+                className="
           w-full
 
           px-[25px]
 
           md:max-w-[600px]
         "
-      >
+            >
 
 
 
-        <h1
-          className="
+                <h1
+                    className="
             pt-[65px]
             pb-[30px]
 
@@ -62,78 +66,82 @@ const Cart = () => {
             border-b
             border-[#E2E2E2]
           "
-        >
+                >
 
-          My Cart
+                    My Cart
 
-        </h1>
-
-
+                </h1>
 
 
 
 
-        {items.length === 0 ? (
 
-          <p
-            className="
+
+                {items.length === 0 ? (
+
+                    <p
+                        className="
               mt-[100px]
 
               text-center
 
               text-[#7C7C7C]
             "
-          >
+                    >
 
-            Your cart is empty
+                        Your cart is empty
 
-          </p>
-
-
-        ) : (
+                    </p>
 
 
-          items.map((item)=>(
-
-            <CartItemCard
-
-              key={item.product.id}
-
-              item={item}
-
-              increase={()=>
-                increaseQuantity(
-                  item.product.id
-                )
-              }
-
-              decrease={()=>
-                decreaseQuantity(
-                  item.product.id
-                )
-              }
-
-              remove={()=>
-                removeItem(
-                  item.product.id
-                )
-              }
-
-            />
-
-          ))
-
-        )}
+                ) : (
 
 
+                    items.map((item) => (
+
+                        <CartItemCard
+
+                            key={item.product.id}
+
+                            item={item}
+
+                            increase={() =>
+                                increaseQuantity(
+                                    item.product.id
+                                )
+                            }
+
+                            decrease={() =>
+                                decreaseQuantity(
+                                    item.product.id
+                                )
+                            }
+
+                            remove={() =>
+                                removeItem(
+                                    item.product.id
+                                )
+                            }
+
+                        />
+
+                    ))
+
+                )}
 
 
 
 
-        {items.length > 0 && (
 
-          <button
-            className="
+
+                {items.length > 0 && (
+
+                    <button
+
+                        onClick={() =>
+                            setCheckoutOpen(true)
+                        }
+                        className="
               fixed
 
               bottom-[90px]
@@ -165,13 +173,13 @@ const Cart = () => {
               items-center
               gap-5
             "
-          >
+                    >
 
-            Go to Checkout
+                        Go to Checkout
 
 
-            <span
-              className="
+                        <span
+                            className="
                 bg-black/10
 
                 px-2
@@ -180,29 +188,50 @@ const Cart = () => {
                 rounded
                 text-xs
               "
-            >
+                        >
 
-              $
-              {
-                totalPrice()
-                .toFixed(2)
-              }
+                            $
+                            {
+                                totalPrice()
+                                    .toFixed(2)
+                            }
 
-            </span>
-
-
-          </button>
-
-        )}
+                        </span>
 
 
+                    </button>
 
-      </section>
+                )}
 
 
-    </main>
 
-  );
+
+            </section>
+
+                {
+
+        checkoutOpen &&
+
+            <CheckoutModal
+
+                close={() =>
+                    setCheckoutOpen(false)
+                }
+
+            />
+
+    }
+
+
+
+        </main>
+
+        
+
+
+    );
+    
+
 
 };
 
