@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import Button from "../../components/common/button";
+import Button from "../../components/common/Button";
 import LocationSelect from "../../components/common/LocationSelect";
 import locations from "../../data/locations.json";
 

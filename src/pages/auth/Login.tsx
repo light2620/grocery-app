@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 import AuthInput from "../../components/auth/AuthInput";
-import Button from "../../components/common/button";
+import Button from "../../components/common/Button";
 
 
 import carrot from "../../assets/images/carrot-color.svg";

@@ -1,7 +1,7 @@
 import carrot from "../../assets/images/carrot.png";
 import onboardingBg from "../../assets/images/onboarding.jpg";
 
-import Button from "../../components/common/button";
+import Button from "../../components/common/Button";
 
 
 const Onboarding = () => {
