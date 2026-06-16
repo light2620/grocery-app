@@ -22,6 +22,7 @@ import {
 import ProductImageSlider from "../../components/product/ProductImageSlider";
 
 import { useProductStore } from "../../stores/productStore";
+import { useFavoriteStore } from "../../stores/favoriteStore";
 
 
 const ProductDetail = () => {
@@ -32,15 +33,21 @@ const ProductDetail = () => {
 
   const [qty, setQty] = useState(1);
 
-  const addToCart = useCartStore(
-    state => state.addToCart
-  );
-
+  const {
+    toggleFavorite,
+    isFavorite,
+  } = useFavoriteStore();
 
   const product = useProductStore((state) =>
     state.products.find(
       (item) => item.id === Number(id)
     )
+  );
+
+  const liked = product ? isFavorite(product.id) : false;
+
+  const addToCart = useCartStore(
+    state => state.addToCart
   );
 
   const handleAddCart = () => {
@@ -76,23 +83,23 @@ const ProductDetail = () => {
 
 
 
-const decreaseQty = () => {
+  const decreaseQty = () => {
 
-  setQty((prev) =>
-    Math.max(1, prev - 1)
-  );
+    setQty((prev) =>
+      Math.max(1, prev - 1)
+    );
 
-};
+  };
 
 
 
-const increaseQty = () => {
+  const increaseQty = () => {
 
-  setQty((prev) =>
-    Math.min(product.stock, prev + 1)
-  );
+    setQty((prev) =>
+      Math.min(product.stock, prev + 1)
+    );
 
-};
+  };
 
 
 
@@ -240,12 +247,37 @@ const increaseQty = () => {
 
 
 
-            <button>
+            <button
+
+              onClick={() => {
+
+                toggleFavorite(product)
+
+              }}
+
+            >
 
               <Heart
-                className="
-                  text-[#7C7C7C]
-                "
+
+                fill={
+                  liked
+                    ?
+                    "#53B175"
+                    :
+                    "none"
+                }
+
+
+                className={
+
+                  liked
+                    ?
+                    "text-[#53B175]"
+                    :
+                    "text-[#7C7C7C]"
+
+                }
+
               />
 
             </button>
@@ -339,26 +371,26 @@ const increaseQty = () => {
 
 
               <button
-  onClick={increaseQty}
+                onClick={increaseQty}
 
-  disabled={qty === product.stock}
+                disabled={qty === product.stock}
 
-  className="
+                className="
     transition
 
     disabled:opacity-40
 
     active:scale-90
   "
->
+              >
 
-  <Plus
-    className="
+                <Plus
+                  className="
       text-[#53B175]
     "
-  />
+                />
 
-</button>
+              </button>
 
 
 
@@ -581,9 +613,9 @@ const increaseQty = () => {
 
 
           <button
-  onClick={handleAddCart}
+            onClick={handleAddCart}
 
-  className="
+            className="
     mt-[20px]
 
     w-full
@@ -601,11 +633,11 @@ const increaseQty = () => {
     transition
     active:scale-95
   "
->
+          >
 
-  Add To Basket
+            Add To Basket
 
-</button>
+          </button>
 
 
 

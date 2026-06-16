@@ -17,6 +17,7 @@ import Cart from "../pages/app/Cart";
 import AppLayout from "../components/layout/AppLayout";
 import Explore from "../pages/app/Explore";
 import CategoryProducts from "../pages/app/CategoryProducts";
+import Favourite from "../pages/app/Favourite";
 
 
 
@@ -85,7 +86,7 @@ element={<Onboarding />}
 
   <Route
     path="/favourite"
-    element={<div>Favourite</div>}
+    element={<Favourite />}
   />
 
 
