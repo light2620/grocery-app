@@ -109,20 +109,20 @@ text-[#7C7C7C]
             Search Store
           </span>
         </div>
-        <div
-          className="
-mt-[20px]
+<img
+  src="/images/home-banner.png"
+  alt="Fresh grocery banner"
+  className="
+    w-full
+    h-auto
+    mt-8
+   
 
-h-[115px]
+    rounded-[15px]
 
-rounded-[8px]
-
-bg-[url('/banner/banner.png')]
-
-bg-cover
-bg-center
-"
-        />
+    object-cover
+  "
+/>
 
         <ProductSection title="Exclusive Offer" products={exclusiveProducts} />
 
