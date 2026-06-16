@@ -13,6 +13,7 @@ import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
 import Home from "../pages/app/Home";  
 import ProductDetail from "../pages/app/ProductDetail";
+import Cart from "../pages/app/Cart";
 
 
 const AppRoutes = () => {
@@ -68,6 +69,11 @@ path="/product/:id"
 
 element={<ProductDetail/>}
 
+/>
+
+<Route
+  path="/cart"
+  element={<Cart />}
 />
 
 </Routes>

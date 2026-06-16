@@ -53,6 +53,7 @@ const ProductDetail = () => {
       qty
     );
 
+    navigate("/cart");
   };
 
 
