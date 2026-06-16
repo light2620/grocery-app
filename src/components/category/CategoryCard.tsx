@@ -1,4 +1,5 @@
 import type { Category } from "../../types/category";
+import { useNavigate } from "react-router-dom";
 
 
 interface CategoryCardProps {
@@ -13,10 +14,17 @@ const CategoryCard = ({
 
 }: CategoryCardProps) => {
 
+    const navigate = useNavigate();
+
 
   return (
 
     <button
+    onClick={() =>
+ navigate(
+ `/category/${category.slug}`
+ )
+}
       style={{
         backgroundColor: category.background,
         borderColor: category.border,

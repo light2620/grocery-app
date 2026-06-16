@@ -16,6 +16,7 @@ import ProductDetail from "../pages/app/ProductDetail";
 import Cart from "../pages/app/Cart";
 import AppLayout from "../components/layout/AppLayout";
 import Explore from "../pages/app/Explore";
+import CategoryProducts from "../pages/app/CategoryProducts";
 
 
 const AppRoutes = () => {
@@ -91,6 +92,13 @@ element={<Onboarding />}
     path="/account"
     element={<div>Account</div>}
   />
+  <Route
+
+path="/category/:category"
+
+element={<CategoryProducts />}
+
+/>
 
 
 </Route>

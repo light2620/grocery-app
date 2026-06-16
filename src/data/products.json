@@ -25,94 +25,65 @@
     "isExclusive":true,
 
     "isBestSelling":false,
+    "stock" : 5
+  } ,
 
-    "stock": 5
+  {
+    "id": 3,
+    "name": "Naturel Red Apple",
+
+    "images": [
+      "/products/apple1.png",
+      "/products/apple2.png",
+      "/products/apple3.png"
+    ],
+
+    "quantity": "1kg, Price",
+
+    "price": 4.99,
+
+    "description":
+      "Apples are nutritious. Apples may be good for weight loss. Apples may be good for your heart.",
+
+    "nutrition":"100gr",
+
+    "rating":5,
+
+    "category":"beverages",
+
+    "isExclusive":true,
+
+    "isBestSelling":false,
+    "stock" : 5
   },
-  [
- {
-  "id":20,
+  {
+    "id": 2,
+    "name": "Naturel Red Apple",
 
-  "name":"Diet Coke",
+    "images": [
+      "/products/apple1.png",
+      "/products/apple2.png",
+      "/products/apple3.png"
+    ],
 
-  "images":[
-    "/products/coke.png"
-  ],
+    "quantity": "1kg, Price",
 
-  "quantity":"355ml, Price",
+    "price": 4.99,
 
-  "price":1.99,
+    "description":
+      "Apples are nutritious. Apples may be good for weight loss. Apples may be good for your heart.",
 
-  "stock":10,
+    "nutrition":"100gr",
 
-  "description":"Refreshing drink",
+    "rating":5,
 
-  "nutrition":"100gr",
+    "category":"beverages",
 
-  "rating":5,
+    "isExclusive":true,
 
-  "category":"beverages",
-
-  "isExclusive":false,
-
-  "isBestSelling":false
- },
-
-
- {
-  "id":21,
-
-  "name":"Sprite Can",
-
-  "images":[
-    "/products/sprite.png"
-  ],
-
-  "quantity":"325ml, Price",
-
-  "price":1.50,
-
-  "stock":8,
-
-  "description":"Refreshing drink",
-
-  "nutrition":"100gr",
-
-  "rating":5,
-
-  "category":"beverages",
-
-  "isExclusive":false,
-
-  "isBestSelling":false
- },
+    "isBestSelling":false,
+    "stock" : 5
+  }
 
 
- {
-  "id":22,
-
-  "name":"Apple & Grape Juice",
-
-  "images":[
-    "/products/apple-juice.png"
-  ],
-
-  "quantity":"2L, Price",
-
-  "price":15.99,
-
-  "stock":6,
-
-  "description":"Fruit juice",
-
-  "nutrition":"100gr",
-
-  "rating":5,
-
-  "category":"beverages",
-
-  "isExclusive":false,
-
-  "isBestSelling":false
- }
-]
 ]
