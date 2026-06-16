@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "zone": "Banasree",
+    "areas": [
+      "Block A",
+      "Block B",
+      "Block C"
+    ]
+  },
+  {
+    "id": 2,
+    "zone": "Gulshan",
+    "areas": [
+      "Gulshan 1",
+      "Gulshan 2"
+    ]
+  },
+  {
+    "id": 3,
+    "zone": "Dhanmondi",
+    "areas": [
+      "Road 5",
+      "Road 12",
+      "Road 27"
+    ]
+  },
+  {
+    "id": 4,
+    "zone": "Uttara",
+    "areas": [
+      "Sector 3",
+      "Sector 7",
+      "Sector 10"
+    ]
+  }
+]

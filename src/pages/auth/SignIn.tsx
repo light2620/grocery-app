@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import MobileNumberInput from "../../components/auth/MobileNumberInput";
@@ -10,7 +11,7 @@ import facebook from "../../assets/images/facebook.svg";
 
 const SignIn = () => {
   const [phone, setPhone] = useState("");
-
+  const navigate = useNavigate();
   const [mobileInputView, setMobileInputView] =
     useState(false);
 
@@ -42,10 +43,8 @@ const SignIn = () => {
 
   const handleSubmit = () => {
 
-    console.log(phone);
+    navigate("/verify-otp");
 
-    // later:
-    // navigate("/verify-otp")
 
   };
 

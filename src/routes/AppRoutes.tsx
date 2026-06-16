@@ -7,6 +7,8 @@ import {
 import Splash from "../pages/auth/Splash";
 import Onboarding from "../pages/auth/Onboarding";
 import SignIn from "../pages/auth/SignIn";
+import OtpVerification from "../pages/auth/OtpVerification";
+import Location from "../pages/auth/Location";
 
 
 const AppRoutes = () => {
@@ -31,6 +33,15 @@ element={<Onboarding />}
  element={<SignIn />}
 />
 
+<Route
+  path="/verify-otp"
+  element={<OtpVerification />}
+/>
+
+<Route
+ path="/location"
+ element={<Location />}
+/>
 
 </Routes>
 
