@@ -15,6 +15,7 @@ import Home from "../pages/app/Home";
 import ProductDetail from "../pages/app/ProductDetail";
 import Cart from "../pages/app/Cart";
 import AppLayout from "../components/layout/AppLayout";
+import Explore from "../pages/app/Explore";
 
 
 const AppRoutes = () => {
@@ -76,7 +77,7 @@ element={<Onboarding />}
 
   <Route
     path="/explore"
-    element={<div>Explore</div>}
+    element={<Explore />}
   />
 
 

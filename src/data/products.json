@@ -27,5 +27,92 @@
     "isBestSelling":false,
 
     "stock": 5
-  }
+  },
+  [
+ {
+  "id":20,
+
+  "name":"Diet Coke",
+
+  "images":[
+    "/products/coke.png"
+  ],
+
+  "quantity":"355ml, Price",
+
+  "price":1.99,
+
+  "stock":10,
+
+  "description":"Refreshing drink",
+
+  "nutrition":"100gr",
+
+  "rating":5,
+
+  "category":"beverages",
+
+  "isExclusive":false,
+
+  "isBestSelling":false
+ },
+
+
+ {
+  "id":21,
+
+  "name":"Sprite Can",
+
+  "images":[
+    "/products/sprite.png"
+  ],
+
+  "quantity":"325ml, Price",
+
+  "price":1.50,
+
+  "stock":8,
+
+  "description":"Refreshing drink",
+
+  "nutrition":"100gr",
+
+  "rating":5,
+
+  "category":"beverages",
+
+  "isExclusive":false,
+
+  "isBestSelling":false
+ },
+
+
+ {
+  "id":22,
+
+  "name":"Apple & Grape Juice",
+
+  "images":[
+    "/products/apple-juice.png"
+  ],
+
+  "quantity":"2L, Price",
+
+  "price":15.99,
+
+  "stock":6,
+
+  "description":"Fruit juice",
+
+  "nutrition":"100gr",
+
+  "rating":5,
+
+  "category":"beverages",
+
+  "isExclusive":false,
+
+  "isBestSelling":false
+ }
+]
 ]

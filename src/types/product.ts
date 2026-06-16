@@ -2,7 +2,8 @@ export type ProductCategory =
   | "fruits"
   | "vegetables"
   | "meat"
-  | "grocery";
+  | "grocery"
+  | "beverages"
 
 
 export interface Product {
